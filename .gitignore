@@ -1,0 +1,23 @@
+# Python virtual environment
+venv/
+.venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Large model files & compiled Python extensions
+*.joblib
+*.h5
+*.keras
+*.pkl
+*.pyd   # Sangat penting untuk file seperti _pywrap_tensorflow_internal.pyd
+*.dll   # Penting untuk file seperti libclang.dll
+
+
+# Environment variables
+.env
+
+# OS specific files
+.DS_Store
+Thumbs.db

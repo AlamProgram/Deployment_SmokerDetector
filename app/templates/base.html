@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }} - Smoker Prediction</title>
+    {% else %}
+    <title>Smoker Prediction App</title>
+    {% endif %}
+    <style>
+        /* Gaya dasar untuk body dan link di navbar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8; /* Latar belakang terang */
+            color: #333; /* Teks gelap */
+        }
+        .navbar {
+            background-color: #ffffff; /* Latar belakang navbar putih */
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .navbar-links a {
+            color: #555; /* Warna link lebih gelap */
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+        .navbar-links a:hover {
+            color: #007bff; /* Biru terang saat hover */
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 0;
+        }
+
+        /* Gaya untuk pesan flash */
+        .flashes {
+            list-style: none;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .flashes li {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .flashes .error {
+            background-color: #f8d7da; /* Merah muda */
+            color: #721c24; /* Teks merah gelap */
+            border: 1px solid #f5c6cb;
+        }
+        .flashes .success {
+            background-color: #d4edda; /* Hijau muda */
+            color: #155724; /* Teks hijau gelap */
+            border: 1px solid #c3e6cb;
+        }
+        .flashes .message { /* Default jika tidak ada kategori spesifik */
+            background-color: #cce5ff; /* Biru muda */
+            color: #004085; /* Teks biru gelap */
+            border: 1px solid #b8daff;
+        }
+
+        /* Gaya umum untuk konten block, disesuaikan dengan gambar */
+        .content-container {
+            max-width: 900px; /* Lebar maksimal agar form 2 kolom terlihat baik */
+            margin: 40px auto; /* Centered */
+            padding: 30px;
+            background-color: #ffffff; /* Latar belakang putih */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus */
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}" class="navbar-brand">Smoker Prediction App</a>
+        <div class="navbar-links">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('predict_form') }}">Smoker Predictor</a> {# Pastikan ini mengarah ke rute yang benar #}
+        </div>
+    </div>
+    <hr>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+    <div class="content-container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

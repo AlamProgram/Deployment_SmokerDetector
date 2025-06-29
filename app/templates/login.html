@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="form-title">Form Prediksi Perokok</h1>
+    <p class="form-description">Silakan isi informasi di bawah ini untuk mendapatkan prediksi.</p>
+
+    <form action="" method="post" novalidate class="prediction-form">
+        {{ form.hidden_tag() }}
+        
+        {# Membungkus semua field dalam div untuk menerapkan grid 2 kolom #}
+        <div class="form-grid-container">
+            {# Field Age #}
+            <div class="form-field">
+                {{ form.age.label }}
+                {{ form.age(class_="form-input", placeholder=form.age.render_kw['placeholder']) }}
+                {% for error in form.age.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            {# Perhatikan: Menggunakan 'height' dan 'weight' sesuai form.py yang Anda berikan, bukan 'height_cm'/'weight_kg' #}
+            <div class="form-field">
+                {{ form.height.label }}
+                {{ form.height(class_="form-input", placeholder=form.height.render_kw['placeholder']) }}
+                {% for error in form.height.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.weight.label }}
+                {{ form.weight(class_="form-input", placeholder=form.weight.render_kw['placeholder']) }}
+                {% for error in form.weight.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.eyesight_left.label }}
+                {{ form.eyesight_left(class_="form-input", placeholder=form.eyesight_left.render_kw['placeholder']) }}
+                {% for error in form.eyesight_left.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.eyesight_right.label }}
+                {{ form.eyesight_right(class_="form-input", placeholder=form.eyesight_right.render_kw['placeholder']) }}
+                {% for error in form.eyesight_right.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.hearing_left.label }}
+                {{ form.hearing_left(class_="form-input", placeholder=form.hearing_left.render_kw['placeholder']) }}
+                {% for error in form.hearing_left.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.hearing_right.label }}
+                {{ form.hearing_right(class_="form-input", placeholder=form.hearing_right.render_kw['placeholder']) }}
+                {% for error in form.hearing_right.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.systolic.label }}
+                {{ form.systolic(class_="form-input", placeholder=form.systolic.render_kw['placeholder']) }}
+                {% for error in form.systolic.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.relaxation.label }}
+                {{ form.relaxation(class_="form-input", placeholder=form.relaxation.render_kw['placeholder']) }}
+                {% for error in form.relaxation.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.fasting_blood_sugar.label }}
+                {{ form.fasting_blood_sugar(class_="form-input", placeholder=form.fasting_blood_sugar.render_kw['placeholder']) }}
+                {% for error in form.fasting_blood_sugar.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.cholesterol.label }}
+                {{ form.cholesterol(class_="form-input", placeholder=form.cholesterol.render_kw['placeholder']) }}
+                {% for error in form.cholesterol.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.triglyceride.label }}
+                {{ form.triglyceride(class_="form-input", placeholder=form.triglyceride.render_kw['placeholder']) }}
+                {% for error in form.triglyceride.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.hdl.label }}
+                {{ form.hdl(class_="form-input", placeholder=form.hdl.render_kw['placeholder']) }}
+                {% for error in form.hdl.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.ldl.label }}
+                {{ form.ldl(class_="form-input", placeholder=form.ldl.render_kw['placeholder']) }}
+                {% for error in form.ldl.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.hemoglobin.label }}
+                {{ form.hemoglobin(class_="form-input", placeholder=form.hemoglobin.render_kw['placeholder']) }}
+                {% for error in form.hemoglobin.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.urine_protein.label }}
+                {{ form.urine_protein(class_="form-input", placeholder=form.urine_protein.render_kw['placeholder']) }}
+                {% for error in form.urine_protein.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.serum_creatine.label }}
+                {{ form.serum_creatine(class_="form-input", placeholder=form.serum_creatine.render_kw['placeholder']) }}
+                {% for error in form.serum_creatine.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.AST.label }}
+                {{ form.AST(class_="form-input", placeholder=form.AST.render_kw['placeholder']) }}
+                {% for error in form.AST.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.ALT.label }}
+                {{ form.ALT(class_="form-input", placeholder=form.ALT.render_kw['placeholder']) }}
+                {% for error in form.ALT.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.Gtp.label }}
+                {{ form.Gtp(class_="form-input", placeholder=form.Gtp.render_kw['placeholder']) }}
+                {% for error in form.Gtp.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div class="form-field">
+                {{ form.dental_caries.label }}
+                {{ form.dental_caries(class_="form-input", placeholder=form.dental_caries.render_kw['placeholder']) }}
+                {% for error in form.dental_caries.errors %}
+                <span class="error-message">{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div> {# End of form-grid-container #}
+        
+        <div class="form-submit-button">
+            {{ form.submit(class_="submit-button") }}
+        </div>
+    </form>
+
+    {# Bagian untuk menampilkan Hasil Prediksi #}
+    {# Perhatikan: prediction_class dan smoker_probability harus diteruskan dari routes.py #}
+    {% if prediction_class %}
+    <div class="prediction-results">
+        <h2>Hasil Prediksi Anda:</h2>
+        <p><strong>Status Prediksi:</strong> <span class="prediction-{{ prediction_class | lower | replace(' ', '-') }}">{{ prediction_class }}</span></p>
+        {# Menampilkan probabilitas sebagai persentase #}
+        <p><strong>Probabilitas Menjadi Perokok:</strong> {{ (smoker_probability * 100) | round(2) }}%</p>
+        <p style="font-size: 0.9em; color: #888; margin-top: 15px;">
+            Disclaimer: Prediksi ini hanya berdasarkan data yang Anda masukkan dan model Machine Learning. Selalu konsultasikan dengan profesional kesehatan untuk diagnosis dan saran medis.
+        </p>
+    </div>
+    {# Menampilkan error jika ada prediction_result tapi tidak ada prediction_class (misal karena error) #}
+    {% elif prediction_result and not prediction_class %} 
+        <div class="prediction-results error-message-box">
+            <h2>Kesalahan Prediksi:</h2>
+            <p>{{ prediction_result }}</p>
+        </div>
+    {% endif %}
+
+    <style>
+        /* Gaya spesifik untuk login.html */
+        .form-title {
+            font-size: 2em;
+            font-weight: 900;
+            text-align: center;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .form-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .prediction-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Gaya untuk kontainer grid 2 kolom */
+        .form-grid-container {
+            display: grid;
+            /* Akan otomatis menyesuaikan menjadi 2 kolom jika lebar cukup (min 350px per kolom),
+               jika tidak, akan menjadi 1 kolom */
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5em; /* Jarak antar kolom dan baris */
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.1em;
+            color: #333;
+            background-color: #fcfcfc;
+            box-sizing: border-box;
+        }
+
+        .form-input::placeholder {
+            color: #aaa;
+        }
+
+        .form-input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .form-submit-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .submit-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 250px;
+            padding: 15px 20px;
+            background-color: #333; /* Latar belakang tombol hitam */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .submit-button:hover {
+            background-color: #555; /* Abu-abu lebih gelap saat hover */
+            transform: translateY(-2px);
+        }
+
+        .prediction-results {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .prediction-results h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .prediction-results p {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .prediction-perokok {
+            color: #dc3545; /* Merah untuk Perokok */
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .prediction-bukan-perokok {
+            color: #28a745; /* Hijau untuk Bukan Perokok */
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+        .error-message-box {
+            background-color: #f8d7da !important;
+            border-color: #f5c6cb !important;
+            color: #721c24 !important;
+        }
+        .error-message-box h2, .error-message-box p {
+            color: #721c24 !important;
+        }
+    </style>
+{% endblock %}
